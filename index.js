@@ -47,7 +47,12 @@ app.use((err, req, res, next) => {
 
 /* Anything that is posted to /login will get signed and turned into a valid JWT */
 app.post('/login', (req, res) => {
-  jsonwebtoken.sign(req.body, config.jwt.sharedSecret, { algorithm: config.jwt.algorithm }, (err, token) => {
+  jsonwebtoken.sign(req.body, config.jwt.sharedSecret, {
+    algorithm: config.jwt.algorithm,
+    expiresIn: config.jwt.expiration,
+    issuer: config.jwt.issuer,
+    audience: config.jwt.audience,
+  }, (err, token) => {
     if (err) {
       return res.send(500).json({ error: err })
     }
