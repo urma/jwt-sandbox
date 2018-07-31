@@ -13,10 +13,14 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node $(pwd)",
+    "start": "npm install && node $(pwd)",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [ "jwt", "security", "authentication" ],
+  "keywords": [
+    "jwt",
+    "security",
+    "authentication"
+  ],
   "author": "ulisses.montenegro@gmail.com",
   "license": "ISC"
 }
