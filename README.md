@@ -3,6 +3,16 @@ Sample REST API which leverages JWT authentication with JWT header validation, t
 overriding of public key URIs and similar issues.
 
 ## Usage
+Running the application is done via `npm start`:
+```
+$ NODE_ENV=development npm start
+
+> jwt-workspace@1.0.0 start /home/cabox/workspace
+> node $(pwd)
+
+{"message":"Listening on http://0.0.0.0:3000/","level":"info"}
+```
+Please notice the application logs to the console by default. Logging to files or other sources currently requires changing the `winston` transports configuration in the `index.js` script.
 
 ### Configuration
 Configuration is done via `node-config`, with the default values listed in the provided `config/default.json` file. Those should be overriden in the appropriate environment files, according to `NODE_ENV` value when the application is run.
